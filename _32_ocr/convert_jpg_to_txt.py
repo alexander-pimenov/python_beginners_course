@@ -4,8 +4,11 @@
 # import os
 
 # Путь к сохранённому .jpg
+# Путь к файлу передавать без всяких кавычек, например:
+# C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.jpg
+#
 # input_jpg_1 = "C://Users//pimal//OneDrive//Рабочий стол//photo_2025-08-10_code.jpg"
-# "C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.jpg"
+# "C://Users//pimal//PycharmProjects//photo_2025-08-10_code.jpg"
 # input_jpg_1 = "C:\Users\pimal\OneDrive\Рабочий стол\photo_2025-08-10_code.jpg"
 # output_pdf_1 = "C:\Users\pimal\Documents\Подготовка к интервью\CV\Alexander_Pimenov_CV_Updated.pdf"
 
@@ -18,41 +21,45 @@
 # result
 # result
 # import easyocr - Эта строка импортирует библиотеку EasyOCR, которая используется для оптического распознавания текста (OCR).
+
 import os
 
 import easyocr
 
 
-def image_to_text_easyocr(image_path: str, output_file=None, languages=['en', 'ru']):
+def image_to_text_easyocr(my_image_path: str, output_file=None, my_scope_languages=['en', 'ru']):
     """
     Конвертирует изображение с текстом в текстовый файл с помощью EasyOCR.
 
-    :param image_path: путь к изображению (JPG/PNG)
+    Путь к файлу передавать без всяких кавычек, например: C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.jpg
+
+    :param my_image_path: путь к изображению (JPG/PNG)
     :param output_file: путь к выходному файлу (если None, создаётся автоматически)
-    :param languages: список языков (['en'] - английский, ['ru'] - русский, ['en','ru'] - оба)
+    :param my_scope_languages: список языков (['en'] - английский, ['ru'] - русский, ['en','ru'] - оба)
     :return: путь к сохранённому файлу
     """
     try:
         # Создаём ридер (указываем языки)
         # reader = easyocr.Reader(['ru', 'en'])  # указать языки для распознавания
-        reader = easyocr.Reader(languages)
+        reader = easyocr.Reader(my_scope_languages)
 
         # Читаем текст с картинки
-        result = reader.readtext(image_path, detail=0)  # detail=0 → только текст
+        result = reader.readtext(my_image_path, detail=0)  # detail=0 → только текст
 
         # Объединяем строки
         text = "\n".join(result)
 
         # Если выходной файл не указан, создаём автоматически
         if output_file is None:
-            base_name = os.path.splitext(image_path)[0]
+            base_name = os.path.splitext(my_image_path)[0]
             output_file = f"{base_name}.txt"
 
         # Сохраняем в файл
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(text)
 
-        print(f"✅ Текст сохранён в: {output_file}")
+        print(
+            f"✅ Текст сохранён в: {output_file}")  # ✅ Текст сохранён в: C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.txt
         return output_file
 
     except Exception as e:
@@ -74,4 +81,4 @@ if __name__ == "__main__":
         else:
             languages = ['en', 'ru']  # по умолчанию оба
 
-        image_to_text_easyocr(image_path, languages=languages)
+        image_to_text_easyocr(image_path, my_scope_languages=languages)
