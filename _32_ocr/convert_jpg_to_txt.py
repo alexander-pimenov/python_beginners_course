@@ -4,6 +4,8 @@
 # import os
 
 # Путь к сохранённому .jpg
+# input_jpg_1 = "C://Users//pimal//OneDrive//Рабочий стол//photo_2025-08-10_code.jpg"
+# "C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.jpg"
 # input_jpg_1 = "C:\Users\pimal\OneDrive\Рабочий стол\photo_2025-08-10_code.jpg"
 # output_pdf_1 = "C:\Users\pimal\Documents\Подготовка к интервью\CV\Alexander_Pimenov_CV_Updated.pdf"
 
