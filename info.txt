@@ -1,0 +1,35 @@
+Ссылка на видео: https://vkvideo.ru/video-227978201_456239246
+
+Александр Ильин про IT: https://youtu.be/wDmPgXhlDIg
+
+Ссылки, используемые в курсе:
+1. Онлайн-интерпретатор: https://www.online-python.com/
+2. Установка Python на компьютер: https://www.python.org/downloads/
+3. PyCharm Community Edition:
+4. Репозиторий с кодом курса: https://github.com/jjoskey/python_beginners_course
+5. Документация к открытому API Binance: https://developers.binance.com/docs/binance-spot-api-docs
+6. Visual Crossing, бесплатный API погоды: https://www.visualcrossing.com/weather-api
+7. JSON Formatter: https://jsonformatter.curiousconcept.com/
+8. Официальный бот от Telegram для регистрации других ботов: https://t.me/BotFather
+
+
+Продолжить с https://vkvideo.ru/video-227978201_456239246?t=1h32m0s
+
+
+
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/

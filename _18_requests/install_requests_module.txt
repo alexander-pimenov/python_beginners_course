@@ -1,0 +1,21 @@
+Выполним команду в терминале:
+
+$ pip install requests
+
+Видим загрузку:
+Collecting requests
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting charset_normalizer<4,>=2 (from requests)
+  Downloading charset_normalizer-3.4.2-cp312-cp312-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+Downloading charset_normalizer-3.4.2-cp312-cp312-win_amd64.whl (105 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv)
