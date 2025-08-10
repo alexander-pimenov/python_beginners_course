@@ -5,12 +5,11 @@
 
 # Путь к сохранённому .jpg
 # Путь к файлу передавать без всяких кавычек, например:
-# C:\Users\pimal\PycharmProjects\photo_2025-08-10_code.jpg
+# C:\Users\pl\PycharmProjects\photo_2025-08-10_code.jpg
 #
-# input_jpg_1 = "C://Users//pimal//OneDrive//Рабочий стол//photo_2025-08-10_code.jpg"
-# "C://Users//pimal//PycharmProjects//photo_2025-08-10_code.jpg"
-# input_jpg_1 = "C:\Users\pimal\OneDrive\Рабочий стол\photo_2025-08-10_code.jpg"
-# output_pdf_1 = "C:\Users\pimal\Documents\Подготовка к интервью\CV\Alexander_Pimenov_CV_Updated.pdf"
+# input_jpg_1 = "C://Users//pl//OneDrive//Рабочий стол//photo_2025-08-10_code.jpg"
+# input_jpg_1 = "C:\Users\pl\OneDrive\Рабочий стол\photo_2025-08-10_code.jpg"
+# output_pdf_1 = "C:\Users\pl\Documents\Подготовка\CV\Al_P_CV_Updated.pdf"
 
 # reader = easyocr.Reader(['ru', 'en'])  # указать языки для распознавания
 # Конвертация
@@ -20,7 +19,8 @@
 
 # result
 # result
-# import easyocr - Эта строка импортирует библиотеку EasyOCR, которая используется для оптического распознавания текста (OCR).
+# import easyocr - Эта строка импортирует библиотеку EasyOCR, которая используется для оптического распознавания текста (OCR). Распознаёт текст на изображении.
+# import os - Работает с путями и файловой системой.
 
 import os
 
@@ -40,7 +40,7 @@ def image_to_text_easyocr(my_image_path: str, output_file=None, my_scope_languag
     """
     try:
         # Создаём ридер (указываем языки)
-        # reader = easyocr.Reader(['ru', 'en'])  # указать языки для распознавания
+        # reader = easyocr.Reader(['ru', 'en'])  # указать языки для распознавания, 'ru', 'en' - оба языка
         reader = easyocr.Reader(my_scope_languages)
 
         # Читаем текст с картинки
@@ -51,7 +51,9 @@ def image_to_text_easyocr(my_image_path: str, output_file=None, my_scope_languag
 
         # Если выходной файл не указан, создаём автоматически
         if output_file is None:
+            # Разбивает путь к файлу на имя и расширение:
             base_name = os.path.splitext(my_image_path)[0]
+            # Создаёт автоматическое имя для выходного файла:
             output_file = f"{base_name}.txt"
 
         # Сохраняем в файл
@@ -70,6 +72,7 @@ def image_to_text_easyocr(my_image_path: str, output_file=None, my_scope_languag
 if __name__ == "__main__":
     image_path = input("Введите путь к изображению (JPG/PNG): ").strip()
 
+    # Проверяет, существует ли файл:
     if not os.path.exists(image_path):
         print("❌ Файл не найден!")
     else:
