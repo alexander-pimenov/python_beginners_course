@@ -28,16 +28,16 @@ import easyocr
 
 
 def image_to_text_easyocr(my_image_path: str, output_file=None, my_scope_languages=['en', 'ru']):
-    """
-    Конвертирует изображение с текстом в текстовый файл с помощью EasyOCR.
-
-    Путь к файлу передавать без всяких кавычек, например: C:\Users\pl\PycharmProjects\photo_2025-08-10_code.jpg
-
-    :param my_image_path: путь к изображению (JPG/PNG)
-    :param output_file: путь к выходному файлу (если None, создаётся автоматически)
-    :param my_scope_languages: список языков (['en'] - английский, ['ru'] - русский, ['en','ru'] - оба)
-    :return: путь к сохранённому файлу
-    """
+    # """
+    # Конвертирует изображение с текстом в текстовый файл с помощью EasyOCR.
+    #
+    # Путь к файлу передавать без всяких кавычек, например: C:\Users\pl\PycharmProjects\photo_2025-08-10_code.jpg
+    #
+    # :param my_image_path: путь к изображению (JPG/PNG)
+    # :param output_file: путь к выходному файлу (если None, создаётся автоматически)
+    # :param my_scope_languages: список языков (['en'] - английский, ['ru'] - русский, ['en','ru'] - оба)
+    # :return: путь к сохранённому файлу
+    # """
     try:
         # Создаём ридер (указываем языки)
         # reader = easyocr.Reader(['ru', 'en'])  # указать языки для распознавания, 'ru', 'en' - оба языка
